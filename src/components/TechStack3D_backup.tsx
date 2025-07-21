@@ -12,7 +12,7 @@ interface Skill {
 const getTechConfig = (name: string) => {
   const lowerName = name.toLowerCase();
   
-  export const configs = {
+   const configs = {
   // Frontend Frameworks
   react:      { bg: "#20232A", symbolColor: "#61DAFB", symbol: "⚛" },    // React dark gray bg
   next:       { bg: "#000000", symbolColor: "#FFFFFF", symbol: "⯈" },     // Next.js black bg
