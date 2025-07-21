@@ -4,11 +4,8 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { GraduationCap, Briefcase, Award, Code } from "lucide-react";
 import { SkillBar } from "@/components/skillBar";
-
-// ---------- Replace the imported `skills` import with your existing one ----------
 import { skills } from "@/data";
 
-// We’ll inline your experiences rather than import them:
 const experiences = [
   {
     id: "connexion-club",
@@ -38,22 +35,7 @@ const experiences = [
     ],
     technologies: ["Next.js", "React", "Tailwind CSS", "GitHub Actions"],
   },
-  // {
-  //   id: "nirvana-club",
-  //   company: "IIIT Sri City – Nirvana Club",
-  //   position: "Core Member, Research Domain",
-  //   location: "Sri City, Andhra Pradesh",
-  //   startDate: "Oct 2024",
-  //   endDate: "Present",
-  //   description: [
-  //     "Conducted literature reviews on AI and ML in web applications.",
-  //     "Published research briefs on GitHub and presented at college symposiums.",
-  //   ],
-  //   technologies: ["Python", "ML Concepts", "Git"],
-  // },
 ];
-
-// Education & Certifications will remain in the JSX below
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -73,42 +55,6 @@ const itemVariants = {
     transition: { duration: 0.6 },
   },
 };
-
-// function SkillBar({ skill }: { skill: { name: string; level: number; category: string } }) {
-//   const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true });
-//   return (
-//     <motion.div
-//       ref={ref}
-//       className="space-y-2"
-//       initial={{ opacity: 0, x: -50 }}
-//       animate={inView ? { opacity: 1, x: 0 } : {}}
-//       transition={{ duration: 0.6 }}
-//     >
-//       <div className="flex justify-between items-center">
-//         <span className="text-sm font-medium text-gray-700 dark:text-gray-300">{skill.name}</span>
-//         <span className="text-sm text-gray-500 dark:text-gray-400">{skill.level}%</span>
-//       </div>
-//       <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-//         <motion.div
-//           className="h-2 rounded-full bg-gradient-to-r from-blue-500 to-purple-600"
-//           initial={{ width: 0 }}
-//           animate={inView ? { width: `${skill.level}%` } : {}}
-//           transition={{ duration: 1, delay: 0.2 }}
-//         />
-//       </div>
-//     </motion.div>
-//   );
-// }
-
-export function AboutSkills() {
-  return (
-    <div className="space-y-4">
-      {skills.map((skill) => (
-        <SkillBar key={skill.name} skill={skill} />
-      ))}
-    </div>
-  );
-}
 
 function ExperienceCard({
   experience,
@@ -165,9 +111,8 @@ function ExperienceCard({
 export function About() {
   const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true });
 
-  // group skills by category
   const skillsByCategory = skills.reduce((acc, skill) => {
-    ;(acc[skill.category] ||= []).push(skill);
+    (acc[skill.category] ||= []).push(skill);
     return acc;
   }, {} as Record<string, typeof skills>);
 
@@ -181,7 +126,6 @@ export function About() {
           animate={inView ? "visible" : "hidden"}
           className="space-y-16"
         >
-          {/* Section Header */}
           <motion.div variants={itemVariants} className="text-center">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
               About Me
@@ -191,7 +135,6 @@ export function About() {
             </p>
           </motion.div>
 
-          {/* Bio + Skills */}
           <motion.div variants={itemVariants} className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <div className="flex items-center space-x-3 mb-6">
@@ -203,15 +146,14 @@ export function About() {
                 </h3>
               </div>
               <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-  I’m a full-stack developer who cut my teeth building production‑grade web applications at IIIT Sri City, where I led both team projects and independent capstones. My day‑to‑day mixes React & Next.js on the front end with Node.js/Express APIs and MongoDB/PostgreSQL on the back end. I’m equally comfortable architecting database schemas as I am crafting pixel‑perfect, accessible UI components.
-</p>
-<p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-  Over the past few years I’ve shipped 20+ real‑world projects—from e‑commerce platforms and task‑management dashboards to immersive Three.js backgrounds and data visualizations. I love pairing data‑driven problem‑solving with creative animations that surprise and delight users. Continuous learning is my north star: I stay sharp by exploring emerging tech like server‑side components, WebGL shaders, and cloud‑native deployments on AWS and Docker.
-</p>
-<p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-  Beyond code, I mentor juniors, write technical blog posts, and contribute to open‑source libraries. When I’m not debugging production pipelines, you’ll find me sketching UI ideas in Figma, experimenting with AI‑powered tooling, or sharing what I’ve learned at local meetups. Building resilient, maintainable systems that put people first is what drives me—and I can’t wait to bring that passion to our next collaboration.
-</p>
-
+                I’m a full-stack developer who cut my teeth building production‑grade web applications at IIIT Sri City, where I led both team projects and independent capstones. My day‑to‑day mixes React & Next.js on the front end with Node.js/Express APIs and MongoDB/PostgreSQL on the back end. I’m equally comfortable architecting database schemas as I am crafting pixel‑perfect, accessible UI components.
+              </p>
+              <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                Over the past few years I’ve shipped 20+ real‑world projects—from e‑commerce platforms and task‑management dashboards to immersive Three.js backgrounds and data visualizations. I love pairing data‑driven problem‑solving with creative animations that surprise and delight users. Continuous learning is my north star: I stay sharp by exploring emerging tech like server‑side components, WebGL shaders, and cloud‑native deployments on AWS and Docker.
+              </p>
+              <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                Beyond code, I mentor juniors, write technical blog posts, and contribute to open‑source libraries. When I’m not debugging production pipelines, you’ll find me sketching UI ideas in Figma, experimenting with AI‑powered tooling, or sharing what I’ve learned at local meetups. Building resilient, maintainable systems that put people first is what drives me—and I can’t wait to bring that passion to our next collaboration.
+              </p>
               <div className="grid grid-cols-2 gap-4 pt-4">
                 <div className="text-center p-4 bg-white dark:bg-gray-800 rounded-lg shadow">
                   <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">2+</div>
@@ -224,7 +166,6 @@ export function About() {
               </div>
             </div>
 
-            {/* Skills Grid */}
             <div className="space-y-6">
               {Object.entries(skillsByCategory).map(([category, categorySkills]) => (
                 <div key={category} className="space-y-4">
@@ -241,7 +182,6 @@ export function About() {
             </div>
           </motion.div>
 
-          {/* Experience Timeline */}
           <motion.div variants={itemVariants} className="space-y-8">
             <div className="text-center">
               <div className="flex items-center justify-center space-x-3 mb-4">
@@ -263,9 +203,7 @@ export function About() {
             </div>
           </motion.div>
 
-          {/* Education & Certifications */}
           <motion.div variants={itemVariants} className="grid md:grid-cols-2 gap-8">
-            {/* Education */}
             <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
               <div className="flex items-center space-x-3 mb-6">
                 <div className="p-3 bg-blue-100 dark:bg-blue-900/30 rounded-full">
@@ -293,7 +231,6 @@ export function About() {
               </div>
             </div>
 
-            {/* Certifications */}
             <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg">
               <div className="flex items-center space-x-3 mb-6">
                 <div className="p-3 bg-blue-100 dark:bg-blue-900/30 rounded-full">
@@ -320,38 +257,6 @@ export function About() {
                   </p>
                   <p className="text-sm text-gray-500 dark:text-gray-400">2024</p>
                 </div>
-                {/* <div>
-                  <h4 className="font-medium text-gray-900 dark:text-white">
-                    AWS Certified Developer – Associate
-                  </h4>
-                  <p className="text-blue-600 dark:text-blue-400">
-                    <a
-                      href="https://www.yourcertlink.com/aws-developer-associate"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="underline"
-                    >
-                      View Credential
-                    </a>
-                  </p>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">2023</p>
-                </div> */}
-                {/* <div>
-                  <h4 className="font-medium text-gray-900 dark:text-white">
-                    React Developer Certification
-                  </h4>
-                  <p className="text-blue-600 dark:text-blue-400">
-                    <a
-                      href="https://www.yourcertlink.com/react-developer"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="underline"
-                    >
-                      View Credential
-                    </a>
-                  </p>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">2022</p>
-                </div> */}
               </div>
             </div>
           </motion.div>
