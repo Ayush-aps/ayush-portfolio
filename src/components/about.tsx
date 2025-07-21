@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { GraduationCap, Briefcase, Award, Code } from "lucide-react";
-import { SkillBar } from "@/components/SkillBar";
+import { SkillBar } from "@/components/skillBar";
 
 // ---------- Replace the imported `skills` import with your existing one ----------
 import { skills } from "@/data";
