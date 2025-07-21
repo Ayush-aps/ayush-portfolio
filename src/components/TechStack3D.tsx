@@ -71,7 +71,7 @@ function TechSymbol({ skill, index }: { skill: Skill; index: number }) {
   return (
     <div className="relative group" style={{ perspective: '300px', perspectiveOrigin: 'center center' }}>
       <motion.div
-       as="div" 
+      
         style={{
           position: 'relative',
           width: '80px',
