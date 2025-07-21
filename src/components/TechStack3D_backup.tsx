@@ -70,72 +70,73 @@ function TechSymbol({ skill, index }: { skill: Skill; index: number }) {
 
   return (
     <div className="relative group" style={{ perspective: '200px' }}>
-      <motion.div
+       <motion.div
+    className="hover:scale-110 transition-transform"
+    style={{
+      position: 'relative',
+      width: '80px',
+      height: '80px',
+      transformStyle: 'preserve-3d',
+      cursor: 'pointer',
+    }}
+    initial={{ opacity: 0, y: 20, rotateY: -180 }}
+    animate={{ 
+      opacity: 1, 
+      y: 0, 
+      rotateX: [0, 360],
+      rotateY: [0, 360],
+    }}
+    transition={{
+      opacity: { duration: 0.4, delay: index * 0.05 },
+      y: { duration: 0.4, delay: index * 0.05 },
+      rotateX: {
+        duration: 10,
+        repeat: Infinity,
+        ease: "linear",
+        delay: index * 0.1
+      },
+      rotateY: {
+        duration: 12,
+        repeat: Infinity,
+        ease: "linear",
+        delay: index * 0.15
+      }
+    }}
+    as="div" // 👈 This fixes the type error for className!
+  >
+    {/* Cube faces */}
+    {[
+      { transform: 'rotateY(0deg) translateZ(40px)' },    // Front
+      { transform: 'rotateY(90deg) translateZ(40px)' },   // Right
+      { transform: 'rotateY(180deg) translateZ(40px)' },  // Back
+      { transform: 'rotateY(270deg) translateZ(40px)' },  // Left
+      { transform: 'rotateX(90deg) translateZ(40px)' },   // Top
+      { transform: 'rotateX(-90deg) translateZ(40px)' },  // Bottom
+    ].map((face, faceIndex) => (
+      <div
+        key={faceIndex}
         style={{
-          position: 'relative',
+          position: 'absolute',
           width: '80px',
           height: '80px',
-          transformStyle: 'preserve-3d',
-          cursor: 'pointer',
+          backgroundColor: config.bg,
+          border: '2px solid rgba(255, 255, 255, 0.1)',
+          transform: face.transform,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          fontSize: '24px',
+          fontWeight: 'bold',
+          color: config.symbolColor,
+          borderRadius: '8px',
+          backdropFilter: 'blur(10px)',
+          boxShadow: '0 4px 16px rgba(0, 0, 0, 0.1)',
         }}
-        initial={{ opacity: 0, y: 20, rotateY: -180 }}
-        animate={{ 
-          opacity: 1, 
-          y: 0, 
-          rotateX: [0, 360],
-          rotateY: [0, 360],
-        }}
-        transition={{
-          opacity: { duration: 0.4, delay: index * 0.05 },
-          y: { duration: 0.4, delay: index * 0.05 },
-          rotateX: {
-            duration: 10,
-            repeat: Infinity,
-            ease: "linear",
-            delay: index * 0.1
-          },
-          rotateY: {
-            duration: 12,
-            repeat: Infinity,
-            ease: "linear",
-            delay: index * 0.15
-          }
-        }}
-        className="hover:scale-110 transition-transform"
       >
-        {/* Cube faces */}
-        {[
-          { transform: 'rotateY(0deg) translateZ(40px)' },    // Front
-          { transform: 'rotateY(90deg) translateZ(40px)' },   // Right
-          { transform: 'rotateY(180deg) translateZ(40px)' },  // Back
-          { transform: 'rotateY(270deg) translateZ(40px)' },  // Left
-          { transform: 'rotateX(90deg) translateZ(40px)' },   // Top
-          { transform: 'rotateX(-90deg) translateZ(40px)' },  // Bottom
-        ].map((face, faceIndex) => (
-          <div
-            key={faceIndex}
-            style={{
-              position: 'absolute',
-              width: '80px',
-              height: '80px',
-              backgroundColor: config.bg,
-              border: '2px solid rgba(255, 255, 255, 0.1)',
-              transform: face.transform,
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontSize: '24px',
-              fontWeight: 'bold',
-              color: config.symbolColor,
-              borderRadius: '8px',
-              backdropFilter: 'blur(10px)',
-              boxShadow: '0 4px 16px rgba(0, 0, 0, 0.1)',
-            }}
-          >
-            {config.symbol}
-          </div>
-        ))}
-      </motion.div>
+        {config.symbol}
+      </div>
+    ))}
+  </motion.div>
       
       {/* Skill name */}
       <div className="text-center mt-3 text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
