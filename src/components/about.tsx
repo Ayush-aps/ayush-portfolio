@@ -65,46 +65,49 @@ function ExperienceCard({
 }) {
   const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true });
   return (
-    <motion.div
+    <div
       ref={ref}
       className="relative pl-8 pb-8 border-l-2 border-gray-300 dark:border-gray-600 last:border-l-0 last:pb-0"
-      initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-      animate={inView ? { opacity: 1, x: 0 } : {}}
-      transition={{ duration: 0.6 }}
     >
-      <div className="absolute -left-2 top-0 w-4 h-4 bg-blue-600 rounded-full border-2 border-white dark:border-gray-900" />
-      <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-          <div>
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-              {experience.position}
-            </h3>
-            <p className="text-blue-600 dark:text-blue-400 font-medium">{experience.company}</p>
-            <p className="text-sm text-gray-500 dark:text-gray-400">{experience.location}</p>
+      <motion.div
+        initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+        animate={inView ? { opacity: 1, x: 0 } : {}}
+        transition={{ duration: 0.6 }}
+      >
+        <div className="absolute -left-2 top-0 w-4 h-4 bg-blue-600 rounded-full border-2 border-white dark:border-gray-900" />
+        <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-300">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+            <div>
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
+                {experience.position}
+              </h3>
+              <p className="text-blue-600 dark:text-blue-400 font-medium">{experience.company}</p>
+              <p className="text-sm text-gray-500 dark:text-gray-400">{experience.location}</p>
+            </div>
+            <div className="text-sm text-gray-500 dark:text-gray-400 mt-2 md:mt-0">
+              {experience.startDate} – {experience.endDate}
+            </div>
           </div>
-          <div className="text-sm text-gray-500 dark:text-gray-400 mt-2 md:mt-0">
-            {experience.startDate} – {experience.endDate}
+          <ul className="space-y-2 mb-4">
+            {experience.description.map((item, idx) => (
+              <li key={idx} className="text-gray-600 dark:text-gray-300 text-sm">
+                • {item}
+              </li>
+            ))}
+          </ul>
+          <div className="flex flex-wrap gap-2">
+            {experience.technologies.map((tech) => (
+              <span
+                key={tech}
+                className="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 text-xs rounded-full"
+              >
+                {tech}
+              </span>
+            ))}
           </div>
         </div>
-        <ul className="space-y-2 mb-4">
-          {experience.description.map((item, idx) => (
-            <li key={idx} className="text-gray-600 dark:text-gray-300 text-sm">
-              • {item}
-            </li>
-          ))}
-        </ul>
-        <div className="flex flex-wrap gap-2">
-          {experience.technologies.map((tech) => (
-            <span
-              key={tech}
-              className="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-800 dark:text-blue-300 text-xs rounded-full"
-            >
-              {tech}
-            </span>
-          ))}
-        </div>
-      </div>
-    </motion.div>
+      </motion.div>
+    </div>
   );
 }
 
