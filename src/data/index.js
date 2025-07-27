@@ -99,8 +99,8 @@ export const projects = [
   },
  {
   id: "4",
-  title: "Labour Chauraha – Urban Mobility Platform [Coming Soon]",
-  description: "A real-time job marketplace for daily wage workers",
+  title: 'Labour Chauraha – Urban Mobility Platform [Coming Soon]',
+  description: 'real-time job marketplace for daily wage workers',
   longDescription:
     "An upcoming platform aimed at streamlining the hiring process for daily wage laborers, inspired by the bustling Labour Chauraha in Allahabad. The application will feature real-time job postings, geolocation-based worker discovery, secure authentication, and a user-friendly interface to bridge the gap between employers and laborers.",
   image: "/images/projects/labourchauraha.jpg",
