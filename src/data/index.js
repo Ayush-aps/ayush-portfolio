@@ -97,29 +97,29 @@ export const projects = [
     featured: true,
     category: 'web'
   },
- {
-  id: "4",
-  title: 'Labour Chauraha – Urban Mobility Platform [Coming Soon]',
-  description: 'real-time job marketplace for daily wage workers',
-  longDescription:
-    "An upcoming platform aimed at streamlining the hiring process for daily wage laborers, inspired by the bustling Labour Chauraha in Allahabad. The application will feature real-time job postings, geolocation-based worker discovery, secure authentication, and a user-friendly interface to bridge the gap between employers and laborers.",
-  image: "/images/projects/labourchauraha.jpg",
-  technologies: [
-    "Next.js",
-    "React",
-    "Node.js",
-    "Express.js",
-    "MongoDB",
-    "Tailwind CSS",
-    "Socket.io",
-    "JWT Auth",
-  ],
-  liveUrl: "",
-  githubUrl: "",
-  featured: false,
-  category: "fullstack",
-  status: "Coming Soon"
-}
+  {
+    id: '4',
+    title: 'Labour Chauraha – Urban Mobility Platform [Coming Soon]',
+    description: 'real-time job marketplace for daily wage workers',
+    longDescription:
+      'An upcoming platform aimed at streamlining the hiring process for daily wage laborers, inspired by the bustling Labour Chauraha in Allahabad. The application will feature real-time job postings, geolocation-based worker discovery, secure authentication, and a user-friendly interface to bridge the gap between employers and laborers.',
+    image: '/images/projects/labourchauraha.jpg',
+    technologies: [
+      'Next.js',
+      'React',
+      'Node.js',
+      'Express.js',
+      'MongoDB',
+      'Tailwind CSS',
+      'Socket.io',
+      'JWT Auth'
+    ],
+    liveUrl: '',
+    githubUrl: '',
+    featured: false,
+    category: 'fullstack',
+    status: 'Coming Soon'
+  }
 ]
 
 export const blogPosts = [
