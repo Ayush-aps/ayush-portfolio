@@ -96,27 +96,30 @@ export const projects = [
       'https://github.com/epochiiits/Epoch-Projects/tree/main/EventSphere',
     featured: true,
     category: 'web'
-  }
-  // {
-  //   id: "3",
-  //   title: "Personal Portfolio Website",
-  //   description: "Interactive developer portfolio built with Next.js",
-  //   longDescription:
-  //     "This site! A modern, animated portfolio showcasing my projects, experience, and skills. Built on Next.js with React, styled using Tailwind CSS, animated with Framer Motion, and featuring a Three.js background. Supports dark/light themes, contact form integration with EmailJS, and blog previews.",
-  //   image: "/images/projects/portfolio.jpg",
-  //   technologies: [
-  //     "Next.js",
-  //     "React",
-  //     "Tailwind CSS",
-  //     "Framer Motion",
-  //     "Three.js",
-  //     "EmailJS",
-  //   ],
-  //   liveUrl: "https://ayush-aps.github.io/My-Portfolio/",
-  //   githubUrl: "https://github.com/Ayush-aps/My-Portfolio",
-  //   featured: false,
-  //   category: "fullstack",
-  // },
+  },
+ {
+  id: "4",
+  title: "Labour Chauraha – Urban Mobility Platform [Coming Soon]",
+  description: "A real-time job marketplace for daily wage workers",
+  longDescription:
+    "An upcoming platform aimed at streamlining the hiring process for daily wage laborers, inspired by the bustling Labour Chauraha in Allahabad. The application will feature real-time job postings, geolocation-based worker discovery, secure authentication, and a user-friendly interface to bridge the gap between employers and laborers.",
+  image: "/images/projects/labourchauraha.jpg",
+  technologies: [
+    "Next.js",
+    "React",
+    "Node.js",
+    "Express.js",
+    "MongoDB",
+    "Tailwind CSS",
+    "Socket.io",
+    "JWT Auth",
+  ],
+  liveUrl: "",
+  githubUrl: "",
+  featured: false,
+  category: "fullstack",
+  status: "Coming Soon"
+}
 ]
 
 export const blogPosts = [
