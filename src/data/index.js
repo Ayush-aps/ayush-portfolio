@@ -97,6 +97,28 @@ export const projects = [
     featured: true,
     category: 'web'
   },
+   {
+    id: '3',
+    title: 'QuickAI – AI Content Generation Platform',
+    description: 'AI-powered content and image generation platform with resume review and productivity tools',
+    longDescription:
+      'QuickAI is a full-stack AI content generation platform built with React and Node.js. It enables users to generate articles, blog titles, and AI images, as well as perform background and object removal and get AI-based resume reviews. The frontend uses React + Vite with Tailwind CSS and Clerk authentication, while the backend is powered by Node.js/Express with PostgreSQL (Neon) and integrates multiple AI services like Groq AI and ClipDrop APIs for intelligent content creation. The project supports a community gallery and user management via REST APIs.',
+    image: '/images/projects/quickai.jpg',
+    technologies: [
+      'React',
+      'Node.js',
+      'Express.js',
+      'PostgreSQL (Neon)',
+      'Tailwind CSS',
+      'Clerk Authentication',
+      'Groq AI',
+      'ClipDrop API'
+    ],
+    liveUrl: 'https://q-ai-t9m2.vercel.app',
+    githubUrl: 'https://github.com/Ayush-aps/Q_AI',
+    featured: true,
+    category: 'web'
+},
   {
     id: '4',
     title: 'Labour Chauraha – Urban Mobility Platform [Coming Soon]',
