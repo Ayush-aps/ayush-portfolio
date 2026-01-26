@@ -118,7 +118,7 @@ export const projects = [
     githubUrl: 'https://github.com/Ayush-aps/Q_AI',
     featured: true,
     category: 'web'
- },
+  },
   {
     id: '4',
     title: 'Labour Chauraha – Urban Mobility Platform [Coming Soon]',
