@@ -97,7 +97,7 @@ export const projects = [
     featured: true,
     category: 'web'
   },
-   {
+  {
     id: '3',
     title: 'QuickAI – AI Content Generation Platform',
     description: 'AI-powered content and image generation platform with resume review and productivity tools',
@@ -118,7 +118,7 @@ export const projects = [
     githubUrl: 'https://github.com/Ayush-aps/Q_AI',
     featured: true,
     category: 'web'
-},
+ },
   {
     id: '4',
     title: 'Labour Chauraha – Urban Mobility Platform [Coming Soon]',
